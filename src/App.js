@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 function App() {
+  //coin tracker
   const [loading, setLoading] = useState(true);
   const [coins, setCoins] = useState([]);
   const [money, setMoney] = useState();
