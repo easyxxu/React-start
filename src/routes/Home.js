@@ -35,6 +35,7 @@ function Home() {
         </div>
       ) : (
         <div>
+          {/* 상단 메뉴바 */}
           <div className={styles.title}>
             <h2 className={styles.jiflix}>JIFLIX</h2>
             <h3 className={styles.menu1}>
@@ -44,7 +45,7 @@ function Home() {
               <Link to={`/New`}>New</Link>
             </h3>
             <h3 className={styles.menu3}>
-              <Link to="/">Category</Link>
+              <Link to={`/Category`}>Category</Link>
             </h3>
           </div>
           <div className={styles.movies}>

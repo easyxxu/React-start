@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
+import styles from "./Detail.module.css";
 function Detail() {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
@@ -20,10 +20,29 @@ function Detail() {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div key={movie.id}>
-          <img src={movie.medium_cover_image} alt="movie_cover" />
-          <h2>"{movie.title}"</h2>
-          <p>{movie.description_full}</p>
+        <div>
+          {/* 상단 메뉴바 */}
+          <div className={styles.title}>
+            <h2 className={styles.jiflix}>JIFLIX</h2>
+            <h3 className={styles.menu1}>
+              <Link to="/">Home</Link>
+            </h3>
+            <h3 className={styles.menu2}>
+              <Link to={`/New`}>New</Link>
+            </h3>
+            <h3 className={styles.menu3}>
+              <Link to="/">Category</Link>
+            </h3>
+          </div>
+          <div key={movie.id} className={styles.movie}>
+            <img
+              src={movie.medium_cover_image}
+              alt="movie_cover"
+              className={styles.movie__img}
+            />
+            <h2 className={styles.movie__title}>"{movie.title}"</h2>
+            <p className={styles.movie__summary}>{movie.description_full}</p>
+          </div>
         </div>
       )}
     </div>
