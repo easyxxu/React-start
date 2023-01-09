@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
 import New from "./routes/New";
+import Category from "./routes/Category";
 function App() {
   return (
     <Router>
@@ -11,6 +12,9 @@ function App() {
         </Route>
         <Route path="/new">
           <New />
+        </Route>
+        <Route path="/category">
+          <Category />
         </Route>
         <Route path="/">
           <Home />
