@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./Category.module.css";
+import styles from "./Documentary.module.css";
 import Movie from "../components/Movie";
+import { Link } from "react-router-dom";
 
-function Category() {
+function Documentary() {
   const [loading, setLoading] = useState(true);
-  const [category, setCategory] = useState([]);
+  const [movies, setMovies] = useState([]);
   const getMovies = async () => {
     const response = await fetch(
       `https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year`
     );
     const json = await response.json();
-    setCategory(json.data.movies);
+    setMovies(json.data.movies);
     setLoading(false);
   };
   useEffect(() => {
     getMovies();
   }, []);
-
+  console.log("documentary page");
   return (
     <div className={styles.container}>
       {loading ? (
@@ -62,18 +62,7 @@ function Category() {
             <button>Talk-Show</button>
           </div>
           <div className={styles.movies}>
-            {/* {category.map((movie) => (
-              <Movie
-                key={movie.id}
-                id={movie.id}
-                year={movie.year}
-                coverImg={movie.medium_cover_image}
-                title={movie.title}
-                summary={movie.summary}
-                genres={movie.genres}
-              />
-            ))} */}
-            {category
+            {movies
               .filter((movie) => movie.genres === "Documentary")
               .map((movie) => (
                 <Movie
@@ -92,4 +81,5 @@ function Category() {
     </div>
   );
 }
-export default Category;
+
+export default Documentary;

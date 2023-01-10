@@ -3,6 +3,7 @@ import Detail from "./routes/Detail";
 import Home from "./routes/Home";
 import New from "./routes/New";
 import Category from "./routes/Category";
+import Documentary from "./routes/Documentary";
 function App() {
   return (
     <Router>
@@ -15,6 +16,9 @@ function App() {
         </Route>
         <Route path="/category">
           <Category />
+        </Route>
+        <Route path="/category/documentary">
+          <Documentary />
         </Route>
         <Route path="/">
           <Home />
