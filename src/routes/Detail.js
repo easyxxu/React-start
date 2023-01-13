@@ -33,7 +33,7 @@ function Detail() {
               <Link to={`/New`}>New</Link>
             </h3>
             <h3 className={styles.menu3}>
-              <Link to="/">Category</Link>
+              <Link to="/Category">Category</Link>
             </h3>
           </div>
           <div key={movie.id} className={styles.movie}>

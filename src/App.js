@@ -17,7 +17,7 @@ function App() {
         <Route path="/category">
           <Category />
         </Route>
-        <Route path="/category/documentary">
+        <Route path="/documentary">
           <Documentary />
         </Route>
         <Route path="/">

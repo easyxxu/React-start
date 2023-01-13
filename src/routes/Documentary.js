@@ -17,7 +17,6 @@ function Documentary() {
   useEffect(() => {
     getMovies();
   }, []);
-  console.log("documentary page");
   return (
     <div className={styles.container}>
       {loading ? (
@@ -41,7 +40,7 @@ function Documentary() {
           </div>
           <div className={styles.category__view}>
             <button>
-              <Link to={`/Category/Documentary`}>Documentary</Link>
+              <Link to={`/Documentary`}>Documentary</Link>
             </button>
             <button>Drama</button>
             <button>History</button>
@@ -63,7 +62,9 @@ function Documentary() {
           </div>
           <div className={styles.movies}>
             {movies
-              .filter((movie) => movie.genres === "Documentary")
+              .filter((movie) =>
+                movie.genres.find((genres) => genres === "Documentary")
+              )
               .map((movie) => (
                 <Movie
                   key={movie.id}
