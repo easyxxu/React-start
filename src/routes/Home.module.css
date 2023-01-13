@@ -15,8 +15,8 @@
 .movies {
   display: grid;
   grid-template-columns: repeat(2, minmax(400px, 1fr));
-  grid-gap: 100px;
   padding: 50px;
+  grid-gap: 100px;
   margin-left: 10%;
   margin-right: 10%;
   width: 80%;
@@ -26,7 +26,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 12%;
 }
 .title a {
   text-decoration: none;
